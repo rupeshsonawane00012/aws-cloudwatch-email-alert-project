@@ -79,19 +79,14 @@ EC2 Instance → CloudWatch Metric → CloudWatch Alarm → SNS Topic → Email 
 ![Step8](screenshots/08-top-cpu-usage.png)
 
 ---
-
-### 9. Email Alert Received from AWS
-![Step9](screenshots/09-email-alert-received.png)
-
----
-
-### 10. Alarm State Changed to "In Alarm"
+### 9. Alarm State Changed to "In Alarm"
 ![Step10](screenshots/10-alarm-state-in-alarm.png)
 
 ---
 
-### 11. Final Alert Email Details
+### 10. Final Alert Email Details
 ![Step11](screenshots/11-final-alert-email-details.png)
+
 
 ---
 
