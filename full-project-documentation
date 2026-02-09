@@ -1,0 +1,126 @@
+AWS CloudWatch EC2 Monitoring with Email Alert
+Project Documentation
+1. Introduction
+This project demonstrates how to monitor an Amazon EC2 instance using Amazon CloudWatch and configure automated email notifications when CPU utilization exceeds a predefined threshold.
+The objective of this project is to implement real-time infrastructure monitoring and proactive incident response using AWS services.
+
+2. Project Objective
+Monitor EC2 CPU utilization
+Create CloudWatch alarm for threshold breach
+Send automatic email alerts
+Demonstrate AWS monitoring workflow
+
+3. Services Used
+Amazon EC2
+Amazon CloudWatch
+Amazon SNS
+Linux (Ubuntu)
+Stress Tool
+
+4. Architecture Overview
+
+Workflow:
+EC2 Instance → CloudWatch Metric → CloudWatch Alarm → SNS Topic → Email Notification
+
+5. Prerequisites
+
+AWS Account
+Running EC2 instance
+Email address for alerts
+Basic Linux command knowledge
+
+6. Implementation Steps
+Step 1: Launch EC2 Instance
+
+Login to AWS Management Console
+Navigate to EC2 Dashboard
+Launch Ubuntu Instance
+Configure Security Group
+Verify instance is running
+
+Step 2: Enable Detailed Monitoring
+
+Select EC2 Instance
+Click Actions → Monitor → Enable Detailed Monitoring
+This allows more frequent metric collection.
+
+Step 3: Create CloudWatch Alarm
+
+Open CloudWatch Console
+Navigate to Alarms → Create Alarm
+Select metric:
+EC2 → Per Instance Metrics → CPUUtilization
+
+Step 4: Configure Threshold
+
+Threshold Type: Static
+Condition: Greater than threshold
+Value: 40%
+Alarm will trigger when CPU exceeds 40%.
+
+Step 5: Configure Notification
+
+Create new SNS Topic
+Enter Topic Name
+Add Email Address
+Confirm subscription via email
+
+Step 6: Add Alarm Details
+
+Alarm Name: Email
+Description: CPU Monitoring Alert
+Initially alarm state shows Insufficient Data.
+
+Step 7: Generate CPU Load
+
+Connect to EC2 via SSH and install stress:
+
+sudo apt update
+sudo apt install stress -y
+
+Run command:
+
+stress --cpu 8 --timeout 1000
+
+Step 8: Verify CPU Usage
+
+Run:top
+
+Observe increased CPU usage.
+
+Step 9: Alarm Triggered
+CloudWatch alarm state changes:
+OK → ALARM
+
+Step 10: Email Notification Received
+SNS sends alert email containing:
+Alarm Name
+Instance Details
+Timestamp
+Metric Information
+
+7. Outcome
+
+Real-time monitoring implemented
+Automated alerting configured
+Reduced risk of downtime
+Demonstrated AWS operational monitoring
+
+8. Skills Demonstrated
+
+AWS EC2 Monitoring
+CloudWatch Metrics & Alarms
+SNS Integration
+Linux Performance Testing
+Incident Response Automation
+
+9. Conclusion
+
+This project validates the implementation of automated monitoring and alerting using AWS CloudWatch and SNS. It demonstrates practical knowledge of cloud infrastructure observability.
+
+10. Future Enhancements
+
+Integrate Auto Scaling Group
+Implement Load Balancer
+Use Terraform for automation
+Monitor multiple instances
