@@ -66,7 +66,7 @@ EC2 Instance → CloudWatch Metric → CloudWatch Alarm → SNS Topic → Email 
 ---
 
 ### 6. Alarm State Changes to OK
-![Step6](screenshots/06-alarm-ok-state.png)
+![Step6](screenshots/06-alarm-ok-state..png)
 
 ---
 
