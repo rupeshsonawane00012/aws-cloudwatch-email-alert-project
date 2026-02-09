@@ -11,7 +11,7 @@ The implementation ensures proactive incident detection and reduces downtime ris
 
 ## Architecture
 
-![architecture](architecturearchitecture.png)
+![architecture](architecture/architecturearchitecture.png)
 
 **Workflow**
 
